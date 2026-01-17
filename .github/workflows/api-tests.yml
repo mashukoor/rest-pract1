@@ -1,0 +1,27 @@
+name: Api Automation Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Cache Maven dependencies
+        uses: actions/cache@v4
+        with:
+            path: ~/.m2
+            key: maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: maven-
+
+      - name: Run API tests
+        run: mvn clean test
