@@ -1,0 +1,8 @@
+<suite name = "Rest assured pract" verbose = "2">
+    <test name ="Add order tests">
+        <classes>
+            <class name = "test.AddOrderTest">
+            </class>
+        </classes>
+    </test>
+</suite>
