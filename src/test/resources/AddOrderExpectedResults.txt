@@ -1,5 +1,8 @@
 pencil123,11
 pencil123,12
 pencil125,13
+eraser125,18
+book127,19
 pencil127,16
 pencil128,18s
+
